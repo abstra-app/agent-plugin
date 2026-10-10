@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "abstra",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Build and operate Abstra workflow automations: Python stages, connectors, tables, executions and deploys in your Abstra organization.",
   "author": {
     "name": "Abstra",
@@ -40,8 +40,8 @@
           "Add a job to my project that runs every morning."
         ],
         "brandColor": "#E36C7C",
-        "composerIcon": "./assets/logo.svg",
-        "logo": "./assets/logo.svg"
+        "composerIcon": "./assets/logo.png",
+        "logo": "./assets/logo.png"
       },
       "onboardingSkill": "./skills/get-started/SKILL.md",
       "review": {

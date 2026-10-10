@@ -1,7 +1,7 @@
 {
   "name": "abstra",
   "displayName": "Abstra",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Build and operate Abstra workflow automations: Python stages, connectors, tables, executions and deploys in your Abstra organization.",
   "author": {
     "name": "Abstra",
@@ -18,7 +18,7 @@
     "connectors",
     "back office"
   ],
-  "icon": "./assets/logo.svg",
+  "icon": "./assets/logo.png",
   "documentationUrl": "https://docs.abstra.io",
   "supportUrl": "https://help.abstra.io",
   "privacyPolicyUrl": "https://www.abstra.io/privacy-policy",
