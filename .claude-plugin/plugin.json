@@ -1,0 +1,32 @@
+{
+  "name": "abstra",
+  "displayName": "Abstra",
+  "version": "1.0.0",
+  "description": "Build and operate Abstra workflow automations: Python stages, connectors, tables, executions and deploys in your Abstra organization.",
+  "author": {
+    "name": "Abstra",
+    "email": "help@abstra.app",
+    "url": "https://www.abstra.io"
+  },
+  "homepage": "https://www.abstra.io",
+  "repository": "https://github.com/abstra-app/agent-plugin",
+  "license": "Proprietary",
+  "keywords": [
+    "automation",
+    "workflow",
+    "python",
+    "connectors",
+    "back office"
+  ],
+  "icon": "./assets/logo.svg",
+  "documentationUrl": "https://docs.abstra.io",
+  "supportUrl": "https://help.abstra.io",
+  "privacyPolicyUrl": "https://www.abstra.io/privacy-policy",
+  "termsOfServiceUrl": "https://www.abstra.io/terms-of-service",
+  "mcpServers": {
+    "abstra": {
+      "type": "http",
+      "url": "https://mcp.abstra.io/"
+    }
+  }
+}

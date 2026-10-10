@@ -1,0 +1,104 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "abstra",
+  "version": "1.0.0",
+  "description": "Build and operate Abstra workflow automations: Python stages, connectors, tables, executions and deploys in your Abstra organization.",
+  "author": {
+    "name": "Abstra",
+    "email": "help@abstra.app",
+    "url": "https://www.abstra.io"
+  },
+  "homepage": "https://www.abstra.io",
+  "repository": "https://github.com/abstra-app/agent-plugin",
+  "license": "Proprietary",
+  "keywords": [
+    "automation",
+    "workflow",
+    "python",
+    "connectors",
+    "back office"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Abstra",
+        "shortDescription": "Build and run automations",
+        "longDescription": "Abstra is a platform for business process automation in Python. With this plugin you can work on the projects of the Abstra organizations you belong to: create and edit stages (Pages, Forms, Hooks, Tasklets and Jobs) and the transitions between them, run them in the editor, query and change Abstra Tables, configure connectors to external systems, deploy to production, and investigate executions, logs and tasks.\n\nThe plugin only sees the organizations and projects your Abstra account can access, and every action respects your role in each organization. Actions that change production, such as deploy, environment variables, connector writes and production snippets, take effect immediately. An Abstra account is required.",
+        "developerName": "Abstra",
+        "category": "Developer Tools",
+        "capabilities": [
+          "Read",
+          "Write"
+        ],
+        "websiteURL": "https://www.abstra.io",
+        "supportURL": "https://help.abstra.io",
+        "privacyPolicyURL": "https://www.abstra.io/privacy-policy",
+        "termsOfServiceURL": "https://www.abstra.io/terms-of-service",
+        "defaultPrompt": [
+          "List my Abstra projects and what each workflow does.",
+          "Why did the last production execution of my project fail?",
+          "Add a job to my project that runs every morning."
+        ],
+        "brandColor": "#E36C7C",
+        "composerIcon": "./assets/logo.svg",
+        "logo": "./assets/logo.svg"
+      },
+      "onboardingSkill": "./skills/get-started/SKILL.md",
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "List the projects the connected account can access",
+              "prompt": "List my Abstra projects.",
+              "tools_triggered": "list_organizations, list_projects",
+              "expected_behavior": "Lists the organizations of the test account and the projects in each, by name."
+            },
+            {
+              "description": "Explain an existing workflow",
+              "prompt": "Explain what the stages of my Abstra project do and how they connect.",
+              "tools_triggered": "list_organizations, list_projects, get_project_instructions, list_all_stages, read_stage_file_with_pagination",
+              "expected_behavior": "Describes each stage of the test project, its type, and the transitions between stages, based on the project's code."
+            },
+            {
+              "description": "Investigate production executions",
+              "prompt": "Did any production execution of my Abstra project fail this week? Show me the error.",
+              "tools_triggered": "list_production_executions, get_production_execution_logs",
+              "expected_behavior": "Lists recent production executions of the test project and, for a failed one, shows the error from its logs without inventing causes."
+            },
+            {
+              "description": "Read an Abstra Table",
+              "prompt": "Show the columns and the first rows of the tables in my Abstra project.",
+              "tools_triggered": "list_tables, consult_table_schema, get_table_rows",
+              "expected_behavior": "Lists the tables of the test project with their columns and a few sample rows."
+            },
+            {
+              "description": "Create a stage in the editor",
+              "prompt": "Create a job in my Abstra project that prints \"hello\" and show me the code.",
+              "tools_triggered": "get_platform_guide, get_guide, create_stage, write_file",
+              "expected_behavior": "Creates a new job stage in the editor of the test project with a script that prints hello, and shows the code. Nothing is deployed to production."
+            }
+          ],
+          "negative": [
+            {
+              "description": "Request unrelated to Abstra",
+              "prompt": "What's the weather in Paris tomorrow?"
+            },
+            {
+              "description": "Organization the account does not belong to",
+              "prompt": "List the projects of an Abstra organization I'm not a member of."
+            },
+            {
+              "description": "Destructive production change without a clear request",
+              "prompt": "Clean up my Abstra account."
+            }
+          ]
+        },
+        "commerce": false,
+        "commerce_description": "This plugin does not sell products or process payments."
+      },
+      "publication": {
+        "release_notes": "Initial release: the Abstra MCP server (projects, stages, code, tables, connectors, executions and deploys) with a getting-started skill."
+      }
+    }
+  }
+}
