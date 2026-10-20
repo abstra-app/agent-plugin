@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "abstra",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Build and operate Abstra workflow automations: Python stages, connectors, tables, executions and deploys in your Abstra organization.",
   "author": {
     "name": "Abstra",
